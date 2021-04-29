@@ -18,4 +18,19 @@ function phoneticInteger(arrOfNum) {
     8: "Eight",
     9: "Nine",
   };
+
+  const integerPhoneticNums = [];
+
+  for (let i = 0; i < arrOfNum.length; i++) {
+    let eachNum = arrOfNum[i];
+    let str = "";
+    for (let j = 0; j < eachNum.length; j++) {
+      str += integerPhonetic[eachNum[j]];
+    }
+    integerPhoneticNums.push(str);
+  }
+  console.log(integerPhoneticNums.join(","));
 }
+
+phoneticInteger(["3", "25", "209"]);
+phoneticInteger(["10", "300", "5"]);
