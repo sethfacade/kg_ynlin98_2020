@@ -5,8 +5,11 @@
 // Given an array: [3, 25, 209], print “Three,TwoFive,TwoZeroNine” into stdout.
 // Given an array: [10, 300, 5], print “OneZero,ThreeZeroZero,Five” into stdout.
 
+// GET USER INPUT FROM SCRIPT //
+const userInputNum = process.argv.slice(2);
+
 function phoneticInteger(arrOfNum) {
-  const integerPhonetic = {
+  const zeroToNinePhonetic = {
     0: "Zero",
     1: "One",
     2: "Two",
@@ -25,12 +28,11 @@ function phoneticInteger(arrOfNum) {
     let eachNum = arrOfNum[i];
     let str = "";
     for (let j = 0; j < eachNum.length; j++) {
-      str += integerPhonetic[eachNum[j]];
+      str += zeroToNinePhonetic[eachNum[j]];
     }
     integerPhoneticNums.push(str);
   }
   console.log(integerPhoneticNums.join(","));
 }
 
-phoneticInteger(["3", "25", "209"]);
-phoneticInteger(["10", "300", "5"]);
+phoneticInteger(userInputNum);
